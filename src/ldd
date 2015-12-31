@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+# Pseudo-ldd for ARM binaries
+# See: https://lists.gnu.org/archive/html/guix-devel/2013-09/msg00136.html
+
+DROBO="${DROBO:-5n}"
+HOST="${HOST:-arm-marvell-linux-gnueabi}"
+TOOLCHAIN="${TOOLCHAIN:-${HOME}/xtools/toolchain/${DROBO}}"
+DEST="${DEST:-${PWD}}"
+
+"${TOOLCHAIN}/bin/${HOST}-objdump" -x "$1" | awk -v DEST="${DEST}" '$1=="NEEDED" {print "\t", $2, "=>", DEST "/lib/" $2}'
