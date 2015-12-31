@@ -36,7 +36,6 @@ install:
   - if [ ! -d $HOME/xtools/python2/5n/bin ]; then
     tar -zxf $HOME/xtools/python2/5n/xpython2.tgz -C $HOME/xtools/python2/5n ;
     fi
-  - $HOME/xtools/python2/5n/bin/python --version
 
 script: ./build.sh
 
