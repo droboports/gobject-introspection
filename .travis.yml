@@ -30,7 +30,7 @@ install:
     fi
   - $HOME/xtools/toolchain/5n/bin/arm-marvell-linux-gnueabi-gcc --version
   - mkdir -p $HOME/xtools/python/5n
-  - if [ ! -f $HOME/xtools/python2/5n ]; then
+  - if [ ! -f $HOME/xtools/python2/5n/xpython.tgz ]; then
     wget -O $HOME/xtools/python2/5n/xpython.tgz https://github.com/droboports/python2/releases/download/v2.7.10/xpython2.tgz ;
     fi
   - if [ ! -d $HOME/xtools/python2/5n/bin ]; then
